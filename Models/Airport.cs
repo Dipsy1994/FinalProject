@@ -8,8 +8,11 @@
         public int? CityID { get; set; }
 
         public City? City { get; set; }
-        public List<Flight>? Departures { get; set; } = new List<Flight>();
-        public List<Flight>? Arrivals { get; set; } = new List<Flight>();
+
+        public virtual List<DepartureInfo>? DepartureInfos { get; set; }
+        public virtual List<ArrivalInfo>? ArrivalInfos { get; set; }
+        
         public List<Lounge>? Lounges { get; set; } = new List<Lounge>();
+        
     }
 }

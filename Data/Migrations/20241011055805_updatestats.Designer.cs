@@ -4,6 +4,7 @@ using FinalProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241011055805_updatestats")]
+    partial class updatestats
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,6 +177,12 @@ namespace FinalProject.Data.Migrations
                     b.Property<int?>("AirlineID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("AirportID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AirportID1")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ArrivalInfoID")
                         .HasColumnType("int");
 
@@ -189,6 +198,10 @@ namespace FinalProject.Data.Migrations
                     b.HasKey("FlightID");
 
                     b.HasIndex("AirlineID");
+
+                    b.HasIndex("AirportID");
+
+                    b.HasIndex("AirportID1");
 
                     b.HasIndex("ArrivalInfoID");
 
@@ -489,7 +502,7 @@ namespace FinalProject.Data.Migrations
             modelBuilder.Entity("FinalProject.Models.ArrivalInfo", b =>
                 {
                     b.HasOne("FinalProject.Models.Airport", "Airport")
-                        .WithMany("ArrivalInfos")
+                        .WithMany()
                         .HasForeignKey("AirportID");
 
                     b.Navigation("Airport");
@@ -519,7 +532,7 @@ namespace FinalProject.Data.Migrations
             modelBuilder.Entity("FinalProject.Models.DepartureInfo", b =>
                 {
                     b.HasOne("FinalProject.Models.Airport", "Airport")
-                        .WithMany("DepartureInfos")
+                        .WithMany()
                         .HasForeignKey("AirportID");
 
                     b.Navigation("Airport");
@@ -530,6 +543,14 @@ namespace FinalProject.Data.Migrations
                     b.HasOne("FinalProject.Models.Airline", "Airline")
                         .WithMany("Flights")
                         .HasForeignKey("AirlineID");
+
+                    b.HasOne("FinalProject.Models.Airport", null)
+                        .WithMany("Arrivals")
+                        .HasForeignKey("AirportID");
+
+                    b.HasOne("FinalProject.Models.Airport", null)
+                        .WithMany("Departures")
+                        .HasForeignKey("AirportID1");
 
                     b.HasOne("FinalProject.Models.ArrivalInfo", "ArrivalInfo")
                         .WithMany("Flights")
@@ -630,9 +651,9 @@ namespace FinalProject.Data.Migrations
 
             modelBuilder.Entity("FinalProject.Models.Airport", b =>
                 {
-                    b.Navigation("ArrivalInfos");
+                    b.Navigation("Arrivals");
 
-                    b.Navigation("DepartureInfos");
+                    b.Navigation("Departures");
 
                     b.Navigation("Lounges");
                 });

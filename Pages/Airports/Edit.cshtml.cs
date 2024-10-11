@@ -36,7 +36,7 @@ namespace FinalProject.Pages.Airports
                 return NotFound();
             }
             Airport = airport;
-           ViewData["CityID"] = new SelectList(_context.Set<City>(), "CityID", "CityID");
+           ViewData["CityID"] = new SelectList(_context.City, "CityID", "CityID");
             return Page();
         }
 
