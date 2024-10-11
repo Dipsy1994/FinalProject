@@ -2,16 +2,30 @@
 @model FinalProject.Pages.Lounges.SearchModel
 
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = "Search Lounge";
 }
 
-<h1>Search Lounge</h1>
+<div class="container my-5">
+    <div id="carouselBackground" class="carousel slide" data-ride="carousel" data-interval="2800">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../images/lounge1.jpg" class="d-block w-100" alt="Lounge Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="../images/lounge2.jpg" class="d-block w-100" alt="Lounge Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="../images/lounge3.jpg" class="d-block w-100" alt="Lounge Image 3">
+            </div>
 
-<div class="row">
-    <div class="col">
-        <form action="" method="get" class="form-inline">
+        </div>
+    </div>
+
+    <div class="search-bar-container text-center">
+        <h1 class="text-light mb-4">Search for Our Lounges</h1>
+        <form action="" method="get" class="form-inline justify-content-center">
             <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search Lounge name..." />
-            <button type="submit" class="btn btn-primary mb-2">Search</button>
+            <button type="submit" class="btn btn-custom mb-2">Search</button>
         </form>
     </div>
 </div>
@@ -20,36 +34,43 @@
 {
     if (Model.Lounge.Any())
     {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Lounge[0].Name)
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Lounge)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="row">
+            @foreach (var item in Model.Lounge)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">Details about @item.Name.</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
     }
     else
     {
-        <div class="row">
-            <div class="col">
-                <div class="alert alert-info">
-                    No results match your term <strong>@Model.Query</strong>
-                </div>
-            </div>
+        <div class="alert alert-info text-center">
+            No results match your term <strong>@Model.Query</strong>
         </div>
     }
 }
 
+<style>
+    .carousel-inner img {
+        height: 400px; /* Adjust height as needed */
+        object-fit: cover; /* Ensures images cover the area */
+    }
 
+    .search-bar-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2; /* Ensures the search bar is above the carousel */
+    }
+
+        .search-bar-container h1 {
+            color: white; /* Title color */
+        }
+</style>

@@ -1,0 +1,113 @@
+﻿@page
+@model FinalProject.Pages.HelpModel
+@{
+
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Help and Support</h2>
+
+        <!-- Popular Help Topics Section -->
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <h4 class="mb-3 text-left">Popular Help Topics</h4>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4">
+                        <div class="card border-light shadow-sm h-100 d-flex flex-column">
+                            <div class="card-body d-flex flex-column">
+                                <i class="bi bi-info-circle display-5 text-primary mb-3"></i>
+                                <h5 class="card-title">Check-In Information</h5>
+                                <p class="card-text flex-grow-1">Learn how to check in online or at the airport and avoid any hassle.</p>
+                                <a href="/Checkin" class="btn btn-primary btn-block mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card border-light shadow-sm h-100 d-flex flex-column">
+                            <div class="card-body d-flex flex-column">
+                                <i class="bi bi-suitcase display-5 text-primary mb-3"></i>
+                                <h5 class="card-title">Baggage Policies</h5>
+                                <p class="card-text flex-grow-1">Find out about baggage limits, fees, and allowances for your flight.</p>
+                                <a href="#" class="btn btn-primary btn-block mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card border-light shadow-sm h-100 d-flex flex-column">
+                            <div class="card-body d-flex flex-column">
+                                <i class="bi bi-card-checklist display-5 text-primary mb-3"></i>
+                                <h5 class="card-title">Visa Requirements</h5>
+                                <p class="card-text flex-grow-1">Get updated on the visa and travel document requirements for your destination.</p>
+                                <a href="https://travel.state.gov/content/travel.html" class="btn btn-primary btn-block mt-auto" target="_blank">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card border-light shadow-sm h-100 d-flex flex-column">
+                            <div class="card-body d-flex flex-column">
+                                <i class="bi bi-exclamation-triangle display-5 text-primary mb-3"></i>
+                                <h5 class="card-title">Travel Updates</h5>
+                                <p class="card-text flex-grow-1">Stay informed with the latest travel advisories and safety information.</p>
+                                <a href="/Flights" class="btn btn-primary btn-block mt-auto">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ and Contact Section with equal heights -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column">
+                    <h4 class="mb-3">Frequently Asked Questions</h4>
+                    <ul class="list-unstyled flex-grow-1">
+                        <li><a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="text-decoration-none text-primary">How can I book a flight online?</a></li>
+                        <li><a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="text-decoration-none text-primary">Can I change or cancel my booking?</a></li>
+                        <li><a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="text-decoration-none text-primary">How do I check my flight status?</a></li>
+                        <li><a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="text-decoration-none text-primary">What travel documents do I need?</a></li>
+                    </ul>
+                    <a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="btn btn-primary mt-3 btn-block">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column">
+                    <h4 class="mb-3">Contact Us</h4>
+                    <p>If you can’t find the information you’re looking for, please reach out to us:</p>
+                    <ul class="list-unstyled flex-grow-1">
+                        <li><strong>Phone:</strong> +1-800-123-4567</li>
+                        <li><strong>Email:</strong> <a href="mailto:support@phoenixwingsairline.com" class="text-decoration-none text-primary">support@airline.com</a></li>
+                        <li><strong>Live Chat:</strong> Available 24/7</li>
+                    </ul>
+                    <a href="https://udify.app/chat/xXXDIBpG6HQXMc9o" class="btn btn-primary mt-auto btn-block">Start Live Chat</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Booking, Status, and Travel Information Section -->
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h5>Manage Your Booking</h5>
+                    <p>Easily make changes to your booking, add services, and more.</p>
+                    <a href="/Mytrips" class="btn btn-primary btn-block">Manage Booking</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h5>Flight Status</h5>
+                    <p>Check your flight’s real-time status and updates.</p>
+                    <a href="/Flights" class="btn btn-primary btn-block">Check Flight Status</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h5>Travel Information</h5>
+                    <p>Get up-to-date travel advisories and requirements for your journey.</p>
+                    <a href="/Destinations" class="btn btn-primary btn-block">View Travel Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

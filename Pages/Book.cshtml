@@ -1,0 +1,66 @@
+﻿@page
+@model FinalProject.Pages.BookModel
+@{
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Book a Flight</h2>
+        <p class="text-center lead">Search flights, view routes and schedules, and explore your onboard experience.</p>
+
+        <form action="/Flights/FlightSearch" method="get" class="booking-form p-4 border rounded shadow-sm">
+            <!-- Row 1: Departure and Arrival Airports -->
+            <div class="form-row row mb-4">
+                <div class="form-group col-md-6">
+                    <label for="DepartureAirport">Departure City</label>
+                    <input type="text" id="DepartureAirport" name="NewBooking.DepartureAirport" class="form-control" placeholder="Enter Departure City" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ArrivalAirport">Arrival City</label>
+                    <input type="text" id="ArrivalAirport" name="NewBooking.ArrivalAirport" class="form-control" placeholder="Enter Arrival City" required>
+                </div>
+            </div>
+
+            <!-- Row 2: Departure and Return Dates -->
+            <div class="form-row row mb-4">
+                <div class="form-group col-md-6">
+                    <label for="DepartureDate">Departing</label>
+                    <input type="date" id="DepartureDate" name="NewBooking.DepartureDate" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ReturnDate">Returning</label>
+                    <input type="date" id="ReturnDate" name="NewBooking.ReturnDate" class="form-control">
+                </div>
+            </div>
+
+            <!-- Row 3: Passengers and Class -->
+            <div class="form-row row mb-4">
+                <div class="form-group col-md-6">
+                    <label for="Passengers">Passengers</label>
+                    <select id="Passengers" name="NewBooking.Passengers" class="form-control" required>
+                        <option value="1 Adult">1 Adult</option>
+                        <option value="2 Adults">2 Adults</option>
+                        <option value="3 Adults">3 Adults</option>
+                        <option value="1 Child">1 Child</option>
+                        <option value="2 Children">2 Children</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="Class">Class</label>
+                    <select id="Class" name="NewBooking.Class" class="form-control" required>
+                        <option value="Economy">Economy Class</option>
+                        <option value="Business">Business Class</option>
+                        <option value="FirstClass">First Class</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Search Flights</button>
+
+            </div>
+        </form>
+    </div>
+}

@@ -3,31 +3,130 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FinalProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="description" content="Phoenix Wings Airlines - Your adventure starts here." />
+    <meta name="keywords" content="Flights, Travel, Book Flights, Airlines, Phoenix Wings" />
+    <title>@ViewData["Title"] - Phoenix Wings Airlines</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/FinalProject.styles.css" asp-append-version="true" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #4b3d36;
+        }
+
+        .navbar {
+            background-color: #8b5a2b;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .carousel-item img {
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .search-box {
+            background-color: #8b5a2b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+            .search-box input {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: #4b3d36;
+                border: 1px solid #d2b48c;
+            }
+
+                .search-box input::placeholder {
+                    color: #4b3d36;
+                }
+
+        .btn-custom {
+            background: linear-gradient(to right, #d2b48c, #8b5a2b) !important;
+            color: white !important;
+            border: none !important;
+        }
+
+            .btn-custom:hover {
+                background: linear-gradient(to right, #8b5a2b, #d2b48c);
+                color: white;
+            }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 60px 0;
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 180px;
+            margin: 20px;
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            color: #8b5a2b;
+        }
+
+        footer {
+            background-color: #4b3d36;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">FinalProject</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Book">Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Flights/Statistics">Statistics</a></li>
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="myTripDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Trip Info
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="myTripDropdown">
+                            
+                            <a class="dropdown-item" href="/MyTrips">My Trips</a>
+                            <a class="dropdown-item" href="/CheckIn">Check-In</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/EliteWings">Elite Wings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Help">Help</a></li>
+                </ul>
+                <partial name="_LoginPartial" />
+
             </div>
         </nav>
     </header>
@@ -39,13 +138,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - FinalProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2024 - Pheonix Wings - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

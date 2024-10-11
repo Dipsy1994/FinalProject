@@ -1,0 +1,26 @@
+﻿@page
+@model FinalProject.Pages.CheckinModel
+@{
+
+    <div class="container my-5">
+        <h2 class="mb-4">Check in now</h2>
+
+        <form method="post" class="mb-4">
+            <div class="form-group">
+                <label for="BookingReference">
+                    Booking reference
+                    <a href="#" data-toggle="tooltip" title="Your booking reference is a 6-character alphanumeric code found on your booking confirmation."><i class="fas fa-info-circle"></i></a>
+                </label>
+                <input type="text" id="BookingReference" name="BookingReference" class="form-control" placeholder="Booking reference" required />
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Last name of passenger</label>
+                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Start check-in</button>
+        </form>
+    </div>
+
+}

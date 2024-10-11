@@ -1,0 +1,67 @@
+﻿@page
+@model FinalProject.Pages.MyTripsModel
+@{
+    <div class="container my-5">
+        <h2 class="mb-4">Find your trip or travel credit</h2>
+
+        <div class="form-group">
+            <!-- Tab for "Find Trip" or "Find Travel Credit" -->
+            <ul class="nav nav-tabs mb-4" id="myTripsTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="find-trip-tab" data-toggle="tab" href="#find-trip" role="tab">Find trip</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="find-credit-tab" data-toggle="tab" href="#find-credit" role="tab">Find travel credit</a>
+                </li>
+            </ul>
+
+            <!-- Tab content for "Find Trip" and "Find Travel Credit" -->
+            <div class="tab-content">
+                <!-- Find Trip Tab -->
+                <div class="tab-pane fade show active" id="find-trip" role="tabpanel">
+                    <form method="post" class="mb-4">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="LastName">Passenger last name</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ConfirmationCode">Confirmation code -or- ticket number</label>
+                                <input type="text" id="ConfirmationCode" name="ConfirmationCode" class="form-control" placeholder="ex. JCQNHD -or- 0012345678900" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Find your trip</button>
+                    </form>
+                </div>
+
+                <!-- Find Travel Credit Tab -->
+                <div class="tab-pane fade" id="find-credit" role="tabpanel">
+                    <!-- You can include a form for finding travel credits here, similar to the trip search form -->
+                    <form method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="CreditLastName">Passenger last name</label>
+                                <input type="text" id="CreditLastName" name="CreditLastName" class="form-control" placeholder="Last name" required />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="CreditNumber">Credit code or ticket number</label>
+                                <input type="text" id="CreditNumber" name="CreditNumber" class="form-control" placeholder="ex. 12345678900" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Find your credit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help section -->
+        <div class="help-section mt-4">
+            <a href="#" class="text-primary" data-toggle="collapse" data-target="#helpInfo">
+                <i class="fas fa-info-circle"></i> What is my confirmation code and where can I find it?
+            </a>
+            <div id="helpInfo" class="collapse mt-2">
+                <p>Your confirmation code can be found in the email sent to you after booking. It's a combination of letters and numbers (e.g., JCQNHD).</p>
+            </div>
+        </div>
+    </div>
+}
