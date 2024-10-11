@@ -1,0 +1,48 @@
+﻿@page
+@model FinalProject.Pages.DepartureInfos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureInfo[0].Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureInfo[0].Gate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureInfo[0].Airport)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DepartureInfo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airport.AirportID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DepartureInfoID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DepartureInfoID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DepartureInfoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
